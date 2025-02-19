@@ -1,13 +1,12 @@
 import "./App.css";
 import Services from "./Components/Services/Services";
 
-
-
 function App() {
-	return <>
-  <Services />
-  </>
-  
+	return (
+		<>
+			<Services />
+		</>
+	);
 }
 
 export default App;

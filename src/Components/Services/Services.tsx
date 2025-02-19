@@ -3,37 +3,37 @@ import React, { SyntheticEvent } from "react";
 
 const serviceList = ["Service 1", "Service 2", "Service 3"];
 const returnData = (e: SyntheticEvent) => {
-	e.preventDefault();
-	const data = await axios.get
-}
+	e.preventDefault();}
+// 	const data = await axios.get
+// }
 
-const onSearchSubmit = async (e: SyntheticEvent) => {
-	e.preventDefault();
-	const result = await searchCompanies(search);
-	// setSearchResult(result.data); THIS WON'T WORK
-	if (typeof result === "string") {
-		setServerError(result);
-	} else if (Array.isArray(result.data)) {
-		setSearchResult(result.data);
-	}
-	console.log(searchResult);
+// const onSearchSubmit = async (e: SyntheticEvent) => {
+// 	e.preventDefault();
+// 	const result = await searchCompanies(search);
+// 	// setSearchResult(result.data); THIS WON'T WORK
+// 	if (typeof result === "string") {
+// 		setServerError(result);
+// 	} else if (Array.isArray(result.data)) {
+// 		setSearchResult(result.data);
+// 	}
+// 	console.log(searchResult);
 
-const searchCompanies = async (query: string) => {
-	try {
-		const data = await axios.get<SearchResponse>(
-			`https://financialmodelingprep.com/api/v3/search-ticker?query=${query}&limit=10&exchange=NASDAQ&apikey=${process.env.REACT_APP_API_KEY}`
-		);
-		return data;
-	} catch (error) {
-		if (axios.isAxiosError(error)) {
-			console.log("error message: ", error.message);
-			return error.message;
-		} else {
-			console.log("unexpected error: ", error);
-			return "An unexpected error has occurred.";
-		}
-	}
-};
+// const searchCompanies = async (query: string) => {
+// 	try {
+// 		const data = await axios.get<SearchResponse>(
+// 			`https://financialmodelingprep.com/api/v3/search-ticker?query=${query}&limit=10&exchange=NASDAQ&apikey=${process.env.REACT_APP_API_KEY}`
+// 		);
+// 		return data;
+// 	} catch (error) {
+// 		if (axios.isAxiosError(error)) {
+// 			console.log("error message: ", error.message);
+// 			return error.message;
+// 		} else {
+// 			console.log("unexpected error: ", error);
+// 			return "An unexpected error has occurred.";
+// 		}
+// 	}
+// };
 
 
 
